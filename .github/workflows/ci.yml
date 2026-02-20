@@ -60,6 +60,16 @@ jobs:
       
       - name: Pre-configuration
         run: |
+
+          cat .git/HEAD
+          cat .git/config
+          echo "Ultimo commit - Autor - correo - fecha"
+          git log
+          echo "Validar de donde Viene Repositorio:"
+          git remote -v
+          echo "Pre-validation:"
+          git log --format="%an <%ae>" | sort | uniq
+
           echo "Clean Repository"
           rm -rf .git .gitignore
           ls -la
