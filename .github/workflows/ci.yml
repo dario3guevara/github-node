@@ -71,7 +71,8 @@ jobs:
           git log --format="%an <%ae>" | sort | uniq
 
           echo "Clean Repository"
-          rm -rf .git .gitignore
+          rm -rf .git
+          #rm -rf .git .gitignore
           ls -la
           git init
           git remote add origin https://dev.azure.com/BancoPichinchaEC/arq-framework/_git/frm-msa-chapter-community
