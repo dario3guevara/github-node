@@ -57,3 +57,23 @@ jobs:
       
       - name: Validate Contenido
         run: ls -la
+      
+      - name: Pre-configuration
+        run: |
+          echo "Clean Repository"
+          rm -rf .git .gitignore
+          ls -la
+          git init
+          git remote add origin https://dev.azure.com/BancoPichinchaEC/arq-framework/_git/frm-msa-chapter-community
+          git config user.email "saguevar@pichincha.com"
+          git config user.name "GUEVARA LOPEZ SALOMON DARIO"
+          git add .
+          git commit -m "Update Project"
+          ls -la
+          echo "Pre-validation:"
+          git log
+          echo "Validate Repo origin:"
+          git remote -v
+          
+
+      
